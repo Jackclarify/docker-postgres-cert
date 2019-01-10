@@ -1,8 +1,0 @@
-FROM postgres:9.5
-#RUN echo "CREATE EXTENSION IF NOT EXISTS pgtap;" > install_pgtap.sql \
-#	&& cp install_pgtap.sql /docker-entrypoint-initdb.d
-COPY ./entrypoint.sh .
-RUN stat entrypoint.sh && chmod 755 entrypoint.sh && stat entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["run"]
-#COPY ./install_pgtap.sql /docker-entrypoint-initdb.d
