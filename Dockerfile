@@ -15,7 +15,7 @@ RUN chown postgres.postgres /usr/share/postgresql/9.5/pg_hba.conf.sample \
     chmod 600 /var/ssl/server.key
 # install pgtap, pg_prove and tap-harness-junit and its dependencies
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git gcc make curl unzip patch ca-certificates libexpat1-dev libwww-perl \
+    && apt-get install -y --no-install-recommends git gcc make curl unzip patch perl ca-certificates libexpat1-dev libwww-perl \
     && curl -Lo pgtap.zip https://api.pgxn.org/dist/pgtap/0.99.0/pgtap-0.99.0.zip \
     && unzip pgtap.zip \
     && apt-get install -y postgresql-server-dev-9.5 postgresql-common \
